@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quant-stock-fetcher"
+version = "0.1.0"
+requires-python = ">=3.9"
+
+[tool.setuptools]
+# Our code lives in src/, and we expose individual .py modules (not packages)
+package-dir = {"" = "src"}
+py-modules = ["fetcher", "visualizer", "fetch_cli"]
+
+# Optional: create a CLI command `fetch-stocks`
+[project.scripts]
+fetch-stocks = "fetch_cli:main"
